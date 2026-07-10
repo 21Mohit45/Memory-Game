@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Memory Game</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="manifest"
+          href="manifest.json">
+
+    <meta name="theme-color"
+          content="#4361ee">
+
+</head>
+
+<body>
+
+    <!-- Splash Screen -->
+
+    <div id="splash">
+
+        <div class="loader"></div>
+
+        <h1>MEMORY GAME</h1>
+
+    </div>
+
+
+    <!-- Home Screen -->
+
+    <div id="homeScreen" class="screen">
+
+        <h1>Memory Game</h1>
+
+        <div class="playerBox">
+
+            <label for="playerId">
+
+                Player ID
+
+            </label>
+
+            <input
+                type="text"
+                id="playerId"
+                maxlength="4"
+                placeholder="AB12"
+                autocomplete="off">
+
+            <small>
+
+                Enter 1–4 uppercase letters or numbers
+
+            </small>
+
+        </div>
+
+
+        <!-- Difficulty -->
+
+        <div class="difficulty">
+
+            <h2>Select Difficulty</h2>
+
+            <button
+                class="difficultyBtn"
+                data-size="4">
+
+                Easy (4 × 4)
+
+            </button>
+
+            <button
+                class="difficultyBtn"
+                data-size="6">
+
+                Hard (6 × 6)
+
+            </button>
+
+        </div>
+
+
+        <!-- Leaderboard -->
+
+        <div class="leaderboard">
+
+            <div class="leaderboardHeader">
+
+                <h2>
+
+                    Top 5 Leaderboard
+
+                </h2>
+
+                <button id="resetLeaderboard">
+
+                    Reset
+
+                </button>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Rank</th>
+
+                        <th>Player</th>
+
+                        <th>Moves</th>
+
+                        <th>Time</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="leaderboardBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- Game Screen -->
+
+    <div
+        id="gameScreen"
+        class="screen hidden">
+
+        <div class="topBar">
+
+            <div>
+
+                Player :
+                <span id="displayPlayer"></span>
+
+            </div>
+
+            <div>
+
+                Time :
+                <span id="timer">
+
+                    00:00
+
+                </span>
+
+            </div>
+
+            <div>
+
+                Moves :
+                <span id="moves">
+
+                    0
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <button id="restartBtn">
+
+                Restart
+
+            </button>
+
+            <button id="homeBtn">
+
+                Home
+
+            </button>
+
+        </div>
+
+        <div id="gameBoard">
+
+        </div>
+
+    </div>
+
+
+    <!-- Win Screen -->
+
+    <div
+        id="winScreen"
+        class="screen hidden">
+
+        <h1>
+
+            🎉 Congratulations!
+
+        </h1>
+
+        <p>
+
+            You completed the Memory Game.
+
+        </p>
+
+        <p>
+
+            Moves :
+            <span id="finalMoves"></span>
+
+        </p>
+
+        <p>
+
+            Time :
+            <span id="finalTime"></span>
+
+        </p>
+
+        <div class="buttons">
+
+            <button id="playAgain">
+
+                Play Again
+
+            </button>
+
+            <button id="goHome">
+
+                Home
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

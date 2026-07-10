@@ -1,0 +1,316 @@
+
+/* =========================
+    GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    color: white;
+    min-height: 100vh;
+}
+
+/* Screen wrapper */
+.screen {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================
+    SPLASH SCREEN
+========================= */
+
+#splash {
+    position: fixed;
+    inset: 0;
+    background: #4361ee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loader {
+    width: 70px;
+    height: 70px;
+    border: 8px solid rgba(255,255,255,0.3);
+    border-top: 8px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#splash h1 {
+    margin-top: 20px;
+    letter-spacing: 3px;
+}
+
+/* =========================
+    HOME SCREEN
+========================= */
+
+#homeScreen h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.playerBox {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playerBox input {
+    padding: 12px;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    width: 200px;
+}
+
+/* =========================
+    DIFFICULTY BUTTONS
+========================= */
+
+.difficulty {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.difficultyBtn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    background: white;
+    color: #3a0ca3;
+    transition: 0.3s;
+    width: 200px;
+}
+
+.difficultyBtn:hover {
+    transform: scale(1.05);
+    background: #ffd60a;
+}
+
+/* =========================
+    LEADERBOARD
+========================= */
+
+.leaderboard {
+    margin-top: 25px;
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.leaderboardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leaderboardHeader button {
+    padding: 8px 12px;
+    border: none;
+    background: #ef233c;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* =========================
+    TOP BAR (GAME SCREEN)
+========================= */
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 500px;
+    background: rgba(255,255,255,0.15);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+    BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.buttons button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* =========================
+    GAME BOARD
+========================= */
+
+#gameBoard {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 4x4 Easy */
+.grid-4 {
+    grid-template-columns: repeat(4, 80px);
+}
+
+/* 6x6 Hard */
+.grid-6 {
+    grid-template-columns: repeat(6, 65px);
+}
+
+/* =========================
+    CARDS
+========================= */
+
+.card {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+.grid-6 .card {
+    width: 65px;
+    height: 65px;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    pointer-events: none;
+}
+
+/* Front & Back */
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    font-size: 28px;
+}
+
+.front {
+    background: white;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+.back {
+    background: #1d3557;
+    color: white;
+}
+
+/* =========================
+    WIN SCREEN
+========================= */
+
+#winScreen h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+#winScreen p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* =========================
+    RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .grid-4 {
+        grid-template-columns: repeat(4, 60px);
+    }
+
+    .grid-6 {
+        grid-template-columns: repeat(6, 45px);
+    }
+
+    .card {
+        width: 60px;
+        height: 60px;
+    }
+
+    .grid-6 .card {
+        width: 45px;
+        height: 45px;
+    }
+
+    .front, .back {
+        font-size: 20px;
+    }
+
+    .topBar {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+}
+

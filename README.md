@@ -1,29 +1,49 @@
-# Memory-Game
-A modern and responsive Memory Game developed using HTML, CSS, and JavaScript. The game challenges players to match pairs of cards while tracking their moves and completion time. It also includes a local leaderboard to save the top scores and supports installation as a Progressive Web App (PWA).
+# 🎮 Memory Game
 
-✨ Features
-🎮 Player ID (1–4 uppercase letters/numbers)
-🟢 Easy Mode (4×4 Grid)
-🔴 Hard Mode (6×6 Grid)
-⏱️ Live Timer
-🔢 Move Counter
-🔄 Restart Game
-🏠 Home Button
-🎉 Win Screen
-🔁 Play Again Option
-🏆 Top 5 Leaderboard
-💾 LocalStorage Score Saving
-🗑️ Reset Leaderboard
-📱 Responsive Design
-🃏 Smooth Card Flip Animation
-📲 Progressive Web App (PWA)
-☁️ Hosted on Vercel
+A simple, responsive Memory Card Game built using **HTML, CSS, and JavaScript**.
 
-🛠️ Technologies Used
-HTML5
-CSS3
-JavaScript (ES6)
-LocalStorage API
-Service Worker
-Web App Manifest
-Vercel
+## 🚀 Features
+- Splash screen
+- Player ID (1–4 letters/numbers)
+- Easy (4×4)
+- Hard (6×6)
+- Timer
+- Moves counter
+- Card flip animation
+- Top 5 leaderboard (localStorage)
+- Reset leaderboard
+- Restart / Home / Play Again
+- PWA support (installable)
+- Fully responsive
+
+---
+
+## 🛠️ Tech Stack
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- LocalStorage
+- Service Worker (PWA)
+
+---
+
+## 📱 How to Run
+
+### Option 1: Local
+Just open `index.html` in browser.
+
+### Option 2: VS Code
+Use Live Server extension.
+
+---
+
+## 🌐 Deploy on Vercel
+
+1. Push project to GitHub
+2. Go to https://vercel.com
+3. Import repository
+4. Click Deploy
+
+---
+
+## 📁 Folder Structure

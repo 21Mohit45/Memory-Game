@@ -1,0 +1,21 @@
+{
+  "name": "Memory Game",
+  "short_name": "MemoryGame",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#4361ee",
+  "theme_color": "#4361ee",
+  "description": "A simple memory card game with leaderboard and difficulty levels.",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
